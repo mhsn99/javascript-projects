@@ -31,9 +31,9 @@ form.addEventListener("submit", function (e) {
 })
 
 function checkingRequired(inputs){
-    inputs.forEach(input => {
+    inputs.forEach(function(input) {
         if(input.value === ""){
-            error(input, `${input} is a required space!!!`)
+            error(input, `${input.id} is a required space!!!`)
         }else{
             success(input)
         }
@@ -50,9 +50,9 @@ function checkingPasswordAndRepassword(pass, repass){
 // check data length
 function checkingLength(input, min, max){
     if(input.value.length < min){
-        error(input, `${input} must be at least ${min} characters.`);
+        error(input, `${input.id} must be at least ${min} characters.`);
     }else if(input.value.length > max){
-        error(input, `${input} must be no more than ${max} characters.`);
+        error(input, `${input.id} must be no more than ${max} characters.`);
     }else{
         success(input);
     }
